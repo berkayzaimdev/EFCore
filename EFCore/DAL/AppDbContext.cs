@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EFCore.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace EFCore.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductFeature> ProductFeatures { get; set; }
         public DbSet<ProductFull> ProductFulls { get; set; }
+        public DbSet<ProductEssential> ProductEssentials { get; set; }
+        public DbSet<ProductWithFeature> ProductWithFeatures { get; set; }
 
         public AppDbContext()
         {
@@ -167,6 +170,8 @@ namespace EFCore.DAL
 
             #endregion
 
+            modelBuilder.Entity<ProductEssential>().HasNoKey();
+            modelBuilder.Entity<ProductWithFeature>().HasNoKey();
             base.OnModelCreating(modelBuilder);
         }
 

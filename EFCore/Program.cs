@@ -7,6 +7,26 @@ using (var _context = new AppDbContext())
 {
 }
 
+#region Queries
+
+#region FromSqlRaw
+//var id = 5;
+//decimal price = 100;
+//var products = await _context.Products.FromSqlRaw("select * from products").ToListAsync();
+//var product1 = await _context.Products.FromSqlRaw("select * from products where id={0}", id).FirstAsync();
+//var product2 = await _context.Products.FromSqlRaw("select * from products where price>{0}", price).ToListAsync();
+
+//var products2 = await _context.ProductEssentials.FromSqlRaw("select Name,Price from products").ToListAsync();
+//var productsWithFeature = await _context.ProductWithFeatures.FromSqlRaw("select p.Id,p.Name,p.Price,pf.Color,pf.Height from Products p inner join ProductFeatures pf on p.Id = pf.Id").ToListAsync();
+
+
+//FromSqlRaw metodu sayesinde tablolara SQL sorgusunu istediğimiz gibi yazarak uygulayabiliriz.
+#endregion
+
+#endregion
+
+
+
 #region Joins
 
 #region Full Outer Join

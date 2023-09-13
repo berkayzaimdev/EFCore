@@ -190,7 +190,7 @@ namespace EFCore.DAL
 
             #region Soft Delete
             //modelBuilder.Entity<Product>().Property(x => x.IsDeleted).HasDefaultValue(false); //Bu metot ile nesnelere otomatik değer ataması yapılır
-            //modelBuilder.Entity<Product>().HasQueryFilter(p=>!p.IsDeleted); //Bu metot ile tablodaki veriler, Entity'lere Map'lenirken filtreden geçirilir.
+            //modelBuilder.Entity<Product>().HasQueryFilter(p=>!p.IsDeleted); //Bu metot ile tablodaki veriler, Entity'lere Map'lenirken filtreden geçirilir. Tablodan veri çekerken IgnoreQueryFilters metodu kullanarak o an için filtreyi etkisizleştirebiliriz.
 
 
             //Soft Delete'nin bize sağladığı faydalar arasında kritik bilgileri içeren tablolar (Finans ve Kurumsal alanlar gibi) hatalı bir silinime uğrarsa, bu bilgileri geri getirebiliriz

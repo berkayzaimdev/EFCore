@@ -7,6 +7,15 @@ using (var _context = new AppDbContext())
 {
 }
 
+#region Query Tags
+//var productWithFeatures = _context.Products.TagWith("Bu query ürünler ve ürünlere bağlı özellikleri getirir.").Include(x => x.ProductFeature).Where(x => x.Price > 300).ToList();
+
+
+//Bu metot bize Logging işlemi sırasında Query uygulandıktan sonra Log üretmemizi sağlar.
+#endregion
+
+
+
 #region Pagination
 //GetProducts(1, 6).ForEach(x =>
 //{

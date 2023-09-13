@@ -23,6 +23,16 @@ using (var _context = new AppDbContext())
 //FromSqlRaw metodu sayesinde tablolara SQL sorgusunu istediğimiz gibi yazarak uygulayabiliriz.
 #endregion
 
+
+
+#region FromSqlInterpolated
+//var id = 5;
+//decimal price = 100;
+//var product3 = await _context.Products.FromSqlInterpolated($"select * from products where price>{price}").ToListAsync();
+
+//FromSqlRaw ile arasındaki fark, yazım formatında '$' işareti kullanarak değişkenleri indexleme yöntemi yerine direkt yerine yazma yöntemi ile belirlememizdir.
+#endregion
+
 #endregion
 
 

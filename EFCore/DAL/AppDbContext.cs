@@ -168,10 +168,15 @@ namespace EFCore.DAL
             //modelBuilder.Entity<Product>().HasCheckConstraint("PriceDiscountCheck", "[Price]>[DiscountPrice]"); //Tabloya koşul ekler
             #endregion
 
+
+
+            #region ToSqlQuery
+            //modelBuilder.Entity<ProductEssential>().HasNoKey().ToSqlQuery("select Name,Price from Products");
+            
+            //Bu metot ile tabloları kendimiz SQL sorgusu yazarak oluşturabiliriz, diğer tablolardan veri çekebiliriz.
             #endregion
 
-            modelBuilder.Entity<ProductEssential>().HasNoKey();
-            modelBuilder.Entity<ProductWithFeature>().HasNoKey();
+            #endregion
             base.OnModelCreating(modelBuilder);
         }
 

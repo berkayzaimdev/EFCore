@@ -7,8 +7,38 @@ using (var _context = new AppDbContext())
 {
 }
 
+#region Joins
+
+#region Full Outer Join
+//var leftJoin = await (from p in _context.Products
+//                      join pf in _context.ProductFeatures on p.Id equals pf.Id into pfList
+//                      from pf in pfList.DefaultIfEmpty()
+//                      select new
+//                      {
+//                          ProductName = p.Name,
+//                          ProductColor = pf.Color,
+//                          ProductWidth = (int?)pf.Width ?? 5
+//                      }).ToListAsync();
+
+//var rightJoin = await (from pf in _context.ProductFeatures
+//                       join p in _context.Products on pf.Id equals p.Id into pList
+//                       from p in pList.DefaultIfEmpty()
+//                       select new
+//                       {
+//                           ProductName = p.Name,
+//                           ProductColor = pf.Color,
+//                           ProductWidth = (int?)pf.Width ?? 5
+//                       }).ToListAsync();
+
+//var outerJoin = leftJoin.Union(rightJoin);
+
+//Left Join ve Right Join sonucu oluşan sorguları, Union metoduyla birleştirerek Full Outer Join'i gerçekleyebiliriz. Bu sorgu tipinde iki tabloda da eşleşen eşleşmeyen, tüm sonuçlar elde edilir.
+#endregion
+
+
+
 #region Left/Right Join
-//var leftJoinResult = await (from p in _context.Products
+//var leftJoin = await (from p in _context.Products
 //                            join pf in _context.ProductFeatures on p.Id equals pf.Id into pfList
 //                            from pf in pfList.DefaultIfEmpty()
 //                            select new
@@ -18,7 +48,7 @@ using (var _context = new AppDbContext())
 //                                ProductWidth = (int?)pf.Width ?? 5
 //                            }).ToListAsync();
 
-//var rightJoinResult = await (from pf in _context.ProductFeatures
+//var rightJoin = await (from pf in _context.ProductFeatures
 //                             join p in _context.Products on pf.Id equals p.Id into pList
 //                             from p in pList.DefaultIfEmpty()
 //                             select new
@@ -84,6 +114,8 @@ using (var _context = new AppDbContext())
 
 //3'lü Join
 //ikisi de eşit sonuçlar türetir
+#endregion
+
 #endregion
 
 #endregion

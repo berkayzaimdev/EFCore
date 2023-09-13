@@ -41,6 +41,7 @@ namespace EFCore.DAL
         //None = Veritabanı tarafından otomatik değer üretmeyi kapatır.
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public decimal PriceKdv { get; set; }
+        public bool IsDeleted { get; set; }
 
         public int CategoryId { get; set; }
 

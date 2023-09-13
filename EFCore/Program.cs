@@ -7,6 +7,34 @@ using (var _context = new AppDbContext())
 {
 }
 
+#region Left/Right Join
+//var leftJoinResult = await (from p in _context.Products
+//                            join pf in _context.ProductFeatures on p.Id equals pf.Id into pfList
+//                            from pf in pfList.DefaultIfEmpty()
+//                            select new
+//                            {
+//                                ProductName = p.Name,
+//                                ProductColor = pf.Color,
+//                                ProductWidth = (int?)pf.Width ?? 5
+//                            }).ToListAsync();
+
+//var rightJoinResult = await (from pf in _context.ProductFeatures
+//                             join p in _context.Products on pf.Id equals p.Id into pList
+//                             from p in pList.DefaultIfEmpty()
+//                             select new
+//                             {
+//                                 ProductName = p.Name,
+//                                 ProductColor = pf.Color,
+//                                 ProductWidth = (int?)pf.Width ?? 5
+//                             }).ToListAsync();
+
+
+//DefaultIfEmpty() metodunu sağdaki ya da soldaki, hangi tabloya yönlü Join uygulamak istiyorsak o nesneye uygulayarak Join uygulaması yapabiliriz.
+//Yönlü Join sonucunda ortak olan sorguların yanı sıra, eşleşmeyen değere sahip sorgular da yer alacaktır. NULL olarak gözükeceklerdir.
+#endregion
+
+
+
 #region Inner Join
 
 #region Inner Join I

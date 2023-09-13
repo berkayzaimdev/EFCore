@@ -8,6 +8,18 @@ using (var _context = new AppDbContext())
 
 }
 
+#region Using Methods with Where
+//var persons = _context.People.ToList().Where(x => FormatPhone(x.Phone) == "5554443322"); 
+//Burada ToList() metodunu kullanmasaydık, FormatPhone kullanımı bize hata fırlatacaktı. Çünkü verileri henüz DB'den çekmeden harici bir metot uygulayamayız. Bunun önüne de ToList kullanımı ile geçtik
+
+//string FormatPhone(string phone)
+//{
+//    return phone.Substring(0, phone.Length - 1);
+//}
+#endregion
+
+
+
 #region Keyless Entity ataması
 //var productFulls = _context.ProductFulls.FromSqlRaw(@"select p.Id, c.Name 'CategoryName', p.Name, p.Price, pf.Height from 
 //Products p

@@ -172,11 +172,23 @@ namespace EFCore.DAL
 
             #region ToSqlQuery
             //modelBuilder.Entity<ProductEssential>().HasNoKey().ToSqlQuery("select Name,Price from Products");
-            
+
             //Bu metot ile tabloları kendimiz SQL sorgusu yazarak oluşturabiliriz, diğer tablolardan veri çekebiliriz.
             #endregion
 
+
+
+            #region ToView
+            //modelBuilder.Entity<ProductFull>().ToView("productwithfeature");
+
+
+            //Bu metot ile SQL tarafında View oluşturabiliriz. View'lar sanal tablolardır. Genellikle bir sorguyu tekrar tekrar yazmamız gereken durumlarda bizi zahmetten kurtarır
+            //View'ı en başta oluşturup, ihtiyacımız olduğu zaman çağırarak kod kalabalığının önüne geçebiliriz.
             #endregion
+
+            #endregion
+
+
             base.OnModelCreating(modelBuilder);
         }
 

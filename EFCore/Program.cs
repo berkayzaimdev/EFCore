@@ -7,6 +7,27 @@ using (var _context = new AppDbContext())
 {
 }
 
+#region Pagination
+//GetProducts(1, 6).ForEach(x =>
+//{
+//    Console.WriteLine($"{x.Id} {x.Name} {x.Price}");
+//});
+
+//static List<Product> GetProducts(int page, int pageSize)
+//{
+//    using (var _context = new AppDbContext())
+//    {
+//        //page=1 pageSize=3 => ilk 3 data => skip:0 take:3 (page-1)*pageSize => (1-1)*3 = 0
+//        //page=2 pageSize=3 => ilk 3 data => skip:3 take:3 (page-1)*pageSize => (2-1)*3 = 3
+//        //page=3 pageSize=3 => ilk 3 data => skip:6 take:3 (page-1)*pageSize => (3-1)*3 = 6
+//        return _context.Products.Where(x=>x.Price>300).OrderByDescending(x => x.Id).Skip((page - 1) * pageSize).Take(pageSize).ToList(); //Skip ile hedef sayfa*sayfadaki nesne sayısı kadar nesne atlarız
+// Take ile de sayfadaki nesne sayısı kadar nesneyi alırız ve sorgu tamamlanmış olur.
+//    }
+//}
+#endregion
+
+
+
 #region Queries
 
 #region FromSqlRaw

@@ -5,8 +5,62 @@ using Microsoft.EntityFrameworkCore;
 Initializer.Build();
 using (var _context = new AppDbContext())
 {
-
 }
+
+#region Inner Join
+
+#region Inner Join I
+//var result = _context.Categories.Join(_context.Products, x => x.Id, y => y.CategoryId, (c, p) => new
+//{
+//    CategoryName = c.Name,
+//    ProductName = p.Name,
+//    ProductPrice = p.Price
+//}).ToList();
+#endregion
+
+
+
+#region Inner Join II
+//var result = _context.Categories.Join(_context.Products,x=>x.Id,y=>y.CategoryId,(c,p) => p).ToList();
+
+//var result2 = (from c in _context.Categories
+//               join p in _context.Products on c.Id equals p.CategoryId
+//               select p).ToList();
+
+
+//2'li Join
+//İkisi de eşit sonuçlar türetir
+#endregion
+
+
+
+#region Inner Join III
+//var result1 = _context.Categories.Join(_context.Products, c => c.Id, p => p.CategoryId, (c, p) => new {c,p})
+//.Join(_context.ProductFeatures, x => x.p.Id, y => y.Id, (c, pf) => new 
+//{
+//    CategoryName=c.c.Name,
+//    ProductName=c.p.Name,
+//    ProductFeatureColor=pf.Color
+//});
+
+//var result2 = (from c in _context.Categories
+//               join p in _context.Products on c.Id equals p.CategoryId
+//               join pf in _context.ProductFeatures on p.Id equals pf.Id
+//               select new
+//               {
+//                   CategoryName = c.Name,
+//                   ProductName = c.Name,
+//                   ProductFeatureColor = pf.Color
+//               }).ToList();
+
+
+//3'lü Join
+//ikisi de eşit sonuçlar türetir
+#endregion
+
+#endregion
+
+
 
 #region Using Methods with Where
 //var persons = _context.People.ToList().Where(x => FormatPhone(x.Phone) == "5554443322"); 

@@ -42,11 +42,11 @@ namespace EFCore.DAL
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public decimal PriceKdv { get; set; }
 
-        //public int CategoryId { get; set; }
+        public int CategoryId { get; set; }
 
         //Navigation Property
         //[ForeignKey(nameof(Category_Id))]
-        //public Category Category { get; set; }
+        public Category Category { get; set; }
 
         public ProductFeature ProductFeature { get; set; }
 
